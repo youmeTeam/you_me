@@ -20,8 +20,8 @@ class UserSessionsControllerTest < ActionController::TestCase
 
   test "should get destroy" do
     login_user
-    delete :destroy
-    assert_redirected_to :users
+    delete :destroy, id: @user
+    assert_redirected_to root_url
     assert_response :redirect
   end
 

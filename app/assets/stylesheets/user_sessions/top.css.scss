@@ -1,8 +1,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html, body {
+  height: 100%;
+}
+
 body {
-  padding-top: 60px;
+  padding-top: 50px;
+}
+
+.top-page {
+  height: 100%;
+  width: 100%;
   background-image: image-url("koho2.jpg");
   background-position: center center;
   background-repeat: no-repeat;

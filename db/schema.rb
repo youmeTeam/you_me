@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160130045824) do
+ActiveRecord::Schema.define(version: 20160209032358) do
+
+  create_table "dreams", force: :cascade do |t|
+    t.text     "content",     limit: 65535
+    t.integer  "likes_count", limit: 4,     default: 0
+    t.integer  "user_id",     limit: 4
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+  end
+
+  add_index "dreams", ["user_id"], name: "index_dreams_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                        limit: 255, null: false
@@ -26,4 +36,5 @@ ActiveRecord::Schema.define(version: 20160130045824) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
 
+  add_foreign_key "dreams", "users"
 end

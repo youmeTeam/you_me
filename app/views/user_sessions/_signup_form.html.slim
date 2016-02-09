@@ -1,11 +1,11 @@
 .top-page
   .signup-div
-    = form_for(:session, url:user_sessions_path) do |f|
+    = form_for :user, url: users_path do |f|
       .signup-header
         h4.top-sentence
           | you meをはじめましょう
       .signup-form
-        = f.email_field :email, class: 'form-control', placeholder: 'メールアドレス'
+        = f.text_field :email, class: 'form-control', placeholder: 'メールアドレス'
       .signup-form
         = f.password_field :password, class: 'form-control', placeholder: 'パスワード'
       .signup-form

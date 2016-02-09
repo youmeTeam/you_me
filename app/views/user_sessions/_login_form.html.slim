@@ -1,5 +1,5 @@
 .login-div
-  = form_for(:session, url:user_sessions_path) do |f|
+  = form_for :session, url:user_sessions_path do |f|
     .login-email
       = f.email_field :email, class: 'form-control', placeholder: 'メールアドレス'
     .row.login-password-row

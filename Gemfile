@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'html2slim', '0.2.0'
+gem 'slim-rails', '3.0.1'
+gem 'bootstrap-sass', '>= 3.3.4'
 gem 'sorcery', '0.9.1'
 gem 'annotate', '2.7.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

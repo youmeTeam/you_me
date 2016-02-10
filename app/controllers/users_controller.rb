@@ -10,7 +10,12 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to users_url
+    else
+      # redirect_to user_sessions_url
+    end
   end
 
   def edit

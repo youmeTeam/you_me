@@ -1,14 +1,14 @@
 .login-div
-  = form_for :session, url:user_sessions_path do |f|
+  = form_tag user_sessions_path, method: :post do
     .login-email
-      = f.email_field :email, class: 'form-control', placeholder: 'メールアドレス'
+      = text_field_tag :email, '', placeholder: 'メールアドレス', class: "form-control"
     .row.login-password-row
       .col-xs-8
-        = f.password_field :password, class: 'form-control', placeholder: 'パスワード'
+        = password_field_tag :password, '', class: 'form-control', placeholder: 'パスワード'
       .col-xs-4
-        = f.submit "ログイン", class: "btn btn-primary login-btn"
+        = submit_tag "ログイン", class: "btn btn-primary login-btn"
     .remember_me
-      = f.label :remember_me, class: "checkbox inline" do
-        = f.check_box :remember_me
+      = label_tag :remember_me, class: "checkbox inline" do
+        = check_box_tag :remember_me, params[:remember], true
         span.top-sentence
           | 保存する

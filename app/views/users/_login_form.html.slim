@@ -1,0 +1,14 @@
+.login-div
+  = form_for(:session, url:user_sessions_path) do |f|
+    .login-email
+      = f.email_field :email, class: 'form-control', placeholder: 'メールアドレス'
+    .row.login-password-row
+      .col-xs-8
+        = f.password_field :password, class: 'form-control', placeholder: 'パスワード'
+      .col-xs-4
+        = f.submit "ログイン", class: "btn btn-primary login-btn"
+    .remember_me
+      = f.label :remember_me, class: "checkbox inline" do
+        = f.check_box :remember_me
+        span.top-sentence
+          | 保存する

@@ -1,0 +1,78 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  padding-top: 60px;
+  background-image: image-url("koho2.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  background-size: cover;
+}
+
+.top-title {
+  color: #ffffff;
+}
+
+.top-sentence {
+  color: #616161;
+}
+
+/* top page*/
+.welcome {
+  margin-left: 80px;
+  padding-top: 60px;
+}
+
+.login-div {
+  background-color: #ffffff;
+  width: 400px;
+  height: 150px;
+  padding-right: 100px;
+  margin-top: 80px;
+  overflow: hidden;
+}
+
+.signup-div {
+  background-color: #ffffff;
+  width: 400px;
+  height: 250px;
+  margin-top: 15px;
+  padding-right: 100px;
+  overflow: hidden;
+}
+
+.signup-header {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+.signup-form {
+  width: 350px;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.login-email {
+  height: 50px;
+  width: 350px;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.login-password-row {
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.remember_me {
+  margin-left: 40px;
+}
+
+.btn-success {
+  width: 150px;
+}
+/* header */

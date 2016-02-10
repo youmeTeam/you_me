@@ -1,5 +1,6 @@
-@import "bootstrap";
-@import "bootstrap-sprockets";
+//@import "bootstrap";
+//@import "bootstrap-sprockets";
+@import 'comman';
 
 /* variable and method */
 $blockColor: #ffffff;
@@ -23,10 +24,6 @@ $blockColor: #ffffff;
 }
 
 /* basic */
-html, body {
-  height: 100%;
-}
-
 body {
   padding-top: 50px;
 }
@@ -73,7 +70,7 @@ body {
 }
 
 .signup-header {
-  @include blockHeader(15px);
+  @include blockHeader(15px 20px);
 }
 
 .signup-form {
@@ -81,7 +78,7 @@ body {
 }
 
 .login-email {
-  @include form(350px, 50px);
+  @include form(350px);
 }
 
 .login-password {
@@ -90,11 +87,11 @@ body {
 
 .login-password-row {
   width: 400px;
-  margin-right: auto;
-  margin-left: auto;
+  padding-left: 15px;
+  margin-top: 15px;
 }
 
-.remember_me {
+.remember-me {
   margin-left: 40px;
 }
 
@@ -115,6 +112,11 @@ body {
 
 .login-block-header {
   @include blockHeader(50px 20px 15px);
+}
+
+.login-button-row {
+  padding-top: 15px;
+  padding-left: 15px;
 }
 
 

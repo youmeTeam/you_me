@@ -3,13 +3,20 @@
     h4.login-block-header
       | You Meにログイン
     = form_tag user_sessions_path, method: :post do
-      .failed-login-email
+      .login-email
         = text_field_tag :email, '', placeholder: 'メールアドレス', class: "form-control"
       .login-password
         = password_field_tag :password, '', class: 'form-control', placeholder: 'パスワード'
+      .row.login-button-row
+        .col-xs-2
           = submit_tag "ログイン", class: "btn btn-primary login-btn"
-      .failed-remember-me
-        = label_tag :remember_me, class: "checkbox inline" do
-          = check_box_tag :remember_me, params[:remember], true
-          span.top-sentence
-            | 保存する
+        .col-xs-4
+          .remember-me
+            = label_tag :remember_me, class: "checkbox inline" do
+              = check_box_tag :remember_me, params[:remember], true
+              span.top-sentence
+                | 保存する
+        .col-xs-7
+          = link_to "パスワードを忘れた場合はこちら", '#'
+
+

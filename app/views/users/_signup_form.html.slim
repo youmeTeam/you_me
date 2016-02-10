@@ -1,0 +1,18 @@
+.top-page
+  .signup-div
+    = form_for(:session, url:user_sessions_path) do |f|
+      .signup-header
+        h4.top-sentence
+          | you meをはじめましょう
+      .signup-form
+        = f.email_field :email, class: 'form-control', placeholder: 'メールアドレス'
+      .signup-form
+        = f.password_field :password, class: 'form-control', placeholder: 'パスワード'
+      .signup-form
+        = f.password_field :password_confirmation, class: 'form-control', placeholder: 'パスワード確認'
+      .row.signup-form
+        .col-xs-4
+          a[href="#"]
+            |  ※利用規約 
+        .col-xs-6.col-xs-offset-2
+          = f.submit "新規登録", class: "btn btn-success login-btn"

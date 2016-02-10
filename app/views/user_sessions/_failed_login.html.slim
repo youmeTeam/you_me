@@ -1,0 +1,15 @@
+.row.login-block
+  .col-xs-8.col-xs-offset-2
+    h4.login-block-header
+      | You Meにログイン
+    = form_tag user_sessions_path, method: :post do
+      .failed-login-email
+        = text_field_tag :email, '', placeholder: 'メールアドレス', class: "form-control"
+      .login-password
+        = password_field_tag :password, '', class: 'form-control', placeholder: 'パスワード'
+          = submit_tag "ログイン", class: "btn btn-primary login-btn"
+      .failed-remember-me
+        = label_tag :remember_me, class: "checkbox inline" do
+          = check_box_tag :remember_me, params[:remember], true
+          span.top-sentence
+            | 保存する

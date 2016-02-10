@@ -1,6 +1,28 @@
-@import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-sprockets";
 
+/* variable and method */
+$blockColor: #ffffff;
+
+@mixin block($width, $height) {
+  background-color: $blockColor;
+  width: $width;
+  height: $height;
+  overflow: hidden;
+}
+
+@mixin form($width, $height: 34px) {
+  width: $width;
+  height: $height;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+@mixin blockHeader($margin) {
+  margin: $margin;
+}
+
+/* basic */
 html, body {
   height: 100%;
 }
@@ -9,15 +31,20 @@ body {
   padding-top: 50px;
 }
 
-.top-page {
+.basicBackground {
   height: 100%;
   width: 100%;
-  background-image: image-url("koho2.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
   background-size: cover;
+}
+
+
+/* top page*/
+.top-page {
+  @extend .basicBackground;
+  background-image: image-url("koho2.jpg");
 }
 
 .top-title {
@@ -28,47 +55,37 @@ body {
   color: #616161;
 }
 
-/* top page*/
 .welcome {
   margin-left: 80px;
   padding-top: 60px;
 }
 
 .login-div {
-  background-color: #ffffff;
-  width: 400px;
-  height: 150px;
+  @include block(400px, 150px);
   padding-right: 100px;
   margin-top: 80px;
-  overflow: hidden;
 }
 
 .signup-div {
-  background-color: #ffffff;
-  width: 400px;
-  height: 250px;
+  @include block(400px, 250px);
   margin-top: 15px;
   padding-right: 100px;
-  overflow: hidden;
 }
 
 .signup-header {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-left: 15px;
+  @include blockHeader(15px);
 }
 
 .signup-form {
-  width: 350px;
-  margin-top: 15px;
-  margin-left: 15px;
+  @include form(350px);
 }
 
 .login-email {
-  height: 50px;
-  width: 350px;
-  margin-left: 15px;
-  margin-top: 15px;
+  @include form(350px, 50px);
+}
+
+.login-password {
+  @include form(350px);
 }
 
 .login-password-row {
@@ -84,4 +101,22 @@ body {
 .btn-success {
   width: 150px;
 }
+
+/* login page */
+.login-background {
+  @extend .basicBackground;
+  background-color: #F5F8FA;
+}
+
+.login-block {
+  @include block(700px, 300px);
+  margin-top: 15px;
+}
+
+.login-block-header {
+  @include blockHeader(50px 20px 15px);
+}
+
+
+
 /* header */

@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'html2slim', '0.2.0'
-gem 'slim-rails', '3.0.1'
-gem 'bootstrap-sass', '>= 3.3.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use mysql as the database for Active Record

@@ -1,4 +1,330 @@
-h1
-  | Dreams#index
-p
-  | Find me in app/views/dreams/index.html.erb
+.main-container.container-fluid
+  .dashboard.dashboard-left
+    .DashboardProfileCard.module
+      = link_to 'profile背景画像', 'users/:id/show', class: 'DashboardProfileCard-bg u-bgUserColor u-block'
+      .DashboardProfileCard-content
+        = link_to 'users/:id/show', class: 'DashboardProfileCard-avatarLink u-inlineBlock' do
+          = image_tag '', size: '', alt: 'プロフィール画像', class: 'DashboardProfileCard-avatarImage'
+        .DashboardProfileCard-userFields
+          .DashboardProfileCard-name
+            = link_to 'UserName', 'users/:id/show', class: 'u-textInheritColor'
+          span.DashboardProfileCard-screenname.u-inlineBlock
+            = link_to 'users/:id/show', class: 'DashboardProfileCard-screennameLink u-linkComplex u-linkClean' do
+              | @
+              span.u-linkComplex-target
+                | UserName
+        .ProfileCardStats
+          ul.ProfileCardStats-statList.Arrange.Arrange--bottom.Arrange--equal
+            li.ProfileCardStats-stat.Arrange-sizeFit
+              = link_to 'users/:id/show', class: 'ProfileCardStats-statLink u-textUserColor u-linkClean u-block' do
+                span.ProfileCardStats-statLabel.u-block
+                  | ドリーム
+                span.ProfileCardStats-statValue
+                  | 233
+            li.ProfileCardStats-stat.Arrange-sizeFit
+              = link_to 'users/:id/show', class: 'ProfileCardStats-statLink u-textUserColor u-linkClean u-block' do
+                span.ProfileCardStats-statLabel.u-block
+                  | フォロー
+                span.ProfileCardStats-statValue
+                  | 69
+            li.ProfileCardStats-stat.Arrange-sizeFit
+              = link_to 'users/:id/show', class: 'ProfileCardStats-statLink u-textUserColor u-linkClean u-block' do
+                span.ProfileCardStats-statLabel.u-block
+                  | フォロワー
+                span.ProfileCardStats-statValue
+                  | 45
+    .CalenderCard.module
+  .content-main.top-timeline-dreambox#timeline
+    .timeline-dream-box
+      .home-dream-box.dream-box.component.dream-user
+    .stream-container
+      .stream
+        ol.stream-items#stream-items-id
+          li.stream-item.expanding-stream-item
+            .dream.original-dream
+              .content
+                .stream-item-header
+                  = link_to 'users/:id/show', class: 'account-group' do
+                    = image_tag '', size: '', alt: 'avatar', class: 'avatar'
+                    strong.fullname
+                      | 髙橋宗也
+                    span.username
+                      b
+                        | @appleeeen0525
+                  small.time
+                    = link_to 'dreams/:id/show', class: 'dream-timestamp' do
+                      span._timestamp
+                        | 2016年2月1日 23:59
+                  .ProfileDream-action--more
+                    .dropdown
+                      = link_to '#', class: 'ProfileDream-actionButton u-textUserColorHover dropdown-toggle', data: { toggle: 'dropdown' } do
+                        = image_tag '', size: '', alt: 'more'
+                      .dropdown-menu
+                        ul
+                          li
+                            = link_to 'hoge', '#'
+                          li
+                            = link_to 'fuga', '#'
+                          li
+                            = link_to 'hoge', '#'
+                .js-dream-text-container
+                  p.DreamTextSize.dream-text
+                    | いい夢だった。
+                .stream-item-footer
+                  .ProfileDream-actionList
+                    .ProfileDream-action.ProfileDream-action--favorite
+                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
+                        = image_tag '', size: '', alt: 'favorite'
+                        | お気に入り
+                    .ProfileDream-action.ProfileDream-action--comment
+                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
+                        = image_tag '', size: '', alt: 'comment'
+                        | コメントする
+                    .ProfileDream-action.ProfileDream-action--share
+                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
+                        = image_tag '', size: '', alt: 'share'
+                        | シェアする
+          li.stream-item.expanding-stream-item
+            .dream.original-dream
+              .content
+                .stream-item-header
+                  = link_to 'users/:id/show', class: 'account-group' do
+                    = image_tag '', size: '', alt: 'avatar', class: 'avatar'
+                    strong.fullname
+                      | 髙橋宗也
+                    span.username
+                      b
+                        | @appleeeen0525
+                  small.time
+                    = link_to 'dreams/:id/show', class: 'dream-timestamp' do
+                      span._timestamp
+                        | 2016年2月1日 23:59
+                  .ProfileDream-action--more
+                    .dropdown
+                      = link_to '#', class: 'ProfileDream-actionButton u-textUserColorHover dropdown-toggle', data: { toggle: 'dropdown' } do
+                        = image_tag '', size: '', alt: 'more'
+                      .dropdown-menu
+                        ul
+                          li
+                            = link_to 'hoge', '#'
+                          li
+                            = link_to 'fuga', '#'
+                          li
+                            = link_to 'hoge', '#'
+                .js-dream-text-container
+                  p.DreamTextSize.dream-text
+                    | いい夢だった。
+                .stream-item-footer
+                  .ProfileDream-actionList
+                    .ProfileDream-action.ProfileDream-action--favorite
+                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
+                        = image_tag '', size: '', alt: 'favorite'
+                        | お気に入り
+                    .ProfileDream-action.ProfileDream-action--comment
+                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
+                        = image_tag '', size: '', alt: 'comment'
+                        | コメントする
+                    .ProfileDream-action.ProfileDream-action--share
+                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
+                        = image_tag '', size: '', alt: 'share'
+                        | シェアする
+          li.stream-item.expanding-stream-item
+            .dream.original-dream
+              .content
+                .stream-item-header
+                  = link_to 'users/:id/show', class: 'account-group' do
+                    = image_tag '', size: '', alt: 'avatar', class: 'avatar'
+                    strong.fullname
+                      | 髙橋宗也
+                    span.username
+                      b
+                        | @appleeeen0525
+                  small.time
+                    = link_to 'dreams/:id/show', class: 'dream-timestamp' do
+                      span._timestamp
+                        | 2016年2月1日 23:59
+                  .ProfileDream-action--more
+                    .dropdown
+                      = link_to '#', class: 'ProfileDream-actionButton u-textUserColorHover dropdown-toggle', data: { toggle: 'dropdown' } do
+                        = image_tag '', size: '', alt: 'more'
+                      .dropdown-menu
+                        ul
+                          li
+                            = link_to 'hoge', '#'
+                          li
+                            = link_to 'fuga', '#'
+                          li
+                            = link_to 'hoge', '#'
+                .js-dream-text-container
+                  p.DreamTextSize.dream-text
+                    | いい夢だった。
+                .stream-item-footer
+                  .ProfileDream-actionList
+                    .ProfileDream-action.ProfileDream-action--favorite
+                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
+                        = image_tag '', size: '', alt: 'favorite'
+                        | お気に入り
+                    .ProfileDream-action.ProfileDream-action--comment
+                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
+                        = image_tag '', size: '', alt: 'comment'
+                        | コメントする
+                    .ProfileDream-action.ProfileDream-action--share
+                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
+                        = image_tag '', size: '', alt: 'share'
+                        | シェアする
+          li.stream-item.expanding-stream-item
+            .dream.original-dream
+              .content
+                .stream-item-header
+                  = link_to 'users/:id/show', class: 'account-group' do
+                    = image_tag '', size: '', alt: 'avatar', class: 'avatar'
+                    strong.fullname
+                      | 髙橋宗也
+                    span.username
+                      b
+                        | @appleeeen0525
+                  small.time
+                    = link_to 'dreams/:id/show', class: 'dream-timestamp' do
+                      span._timestamp
+                        | 2016年2月1日 23:59
+                  .ProfileDream-action--more
+                    .dropdown
+                      = link_to '#', class: 'ProfileDream-actionButton u-textUserColorHover dropdown-toggle', data: { toggle: 'dropdown' } do
+                        = image_tag '', size: '', alt: 'more'
+                      .dropdown-menu
+                        ul
+                          li
+                            = link_to 'hoge', '#'
+                          li
+                            = link_to 'fuga', '#'
+                          li
+                            = link_to 'hoge', '#'
+                .js-dream-text-container
+                  p.DreamTextSize.dream-text
+                    | いい夢だった。
+                .stream-item-footer
+                  .ProfileDream-actionList
+                    .ProfileDream-action.ProfileDream-action--favorite
+                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
+                        = image_tag '', size: '', alt: 'favorite'
+                        | お気に入り
+                    .ProfileDream-action.ProfileDream-action--comment
+                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
+                        = image_tag '', size: '', alt: 'comment'
+                        | コメントする
+                    .ProfileDream-action.ProfileDream-action--share
+                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
+                        = image_tag '', size: '', alt: 'share'
+                        | シェアする
+          li.stream-item.expanding-stream-item
+            .dream.original-dream
+              .content
+                .stream-item-header
+                  = link_to 'users/:id/show', class: 'account-group' do
+                    = image_tag '', size: '', alt: 'avatar', class: 'avatar'
+                    strong.fullname
+                      | 髙橋宗也
+                    span.username
+                      b
+                        | @appleeeen0525
+                  small.time
+                    = link_to 'dreams/:id/show', class: 'dream-timestamp' do
+                      span._timestamp
+                        | 2016年2月1日 23:59
+                  .ProfileDream-action--more
+                    .dropdown
+                      = link_to '#', class: 'ProfileDream-actionButton u-textUserColorHover dropdown-toggle', data: { toggle: 'dropdown' } do
+                        = image_tag '', size: '', alt: 'more'
+                      .dropdown-menu
+                        ul
+                          li
+                            = link_to 'hoge', '#'
+                          li
+                            = link_to 'fuga', '#'
+                          li
+                            = link_to 'hoge', '#'
+                .js-dream-text-container
+                  p.DreamTextSize.dream-text
+                    | いい夢だった。
+                .stream-item-footer
+                  .ProfileDream-actionList
+                    .ProfileDream-action.ProfileDream-action--favorite
+                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
+                        = image_tag '', size: '', alt: 'favorite'
+                        | お気に入り
+                    .ProfileDream-action.ProfileDream-action--comment
+                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
+                        = image_tag '', size: '', alt: 'comment'
+                        | コメントする
+                    .ProfileDream-action.ProfileDream-action--share
+                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
+                        = image_tag '', size: '', alt: 'share'
+                        | シェアする
+  .dashboard.dashboard-right
+    .module.roaming-module.wtf-module.has-content
+      .flex-module
+        .flex-module-header
+          h3
+            | おすすめユーザー
+          small·
+          = link_to '#', class: 'btn-link' do
+            small
+              | 更新
+          small.view-all
+            | ·
+            = link_to 'すべて見る', '#'
+        .flex-module-inner
+          .account-summary
+            .content
+              = link_to '#', class: 'account-group user-thumb' do
+                = image_tag '', size: '', alt: 'avatar', class: 'avatar'
+                span.account-group-inner
+                  b.fullname
+                    | Swift London
+                  span.username
+                    | @SwiftLDN
+              .user-actions.not-following.not-muting
+                = link_to '#', class: 'follow-btn btn follow-button' do
+                 = image_tag '', size: '', alt: 'follow'
+          .account-summary
+            .content
+              = link_to '#', class: 'account-group user-thumb' do
+                = image_tag '', size: '', alt: 'avatar', class: 'avatar'
+                span.account-group-inner
+                  b.fullname
+                    | Swift London
+                  span.username
+                    | @SwiftLDN
+              .user-actions.not-following.not-muting
+                = link_to '#', class: 'follow-btn btn follow-button' do
+                 = image_tag '', size: '', alt: 'follow'
+          .account-summary
+            .content
+              = link_to '#', class: 'account-group user-thumb' do
+                = image_tag '', size: '', alt: 'avatar', class: 'avatar'
+                span.account-group-inner
+                  b.fullname
+                    | Swift London
+                  span.username
+                    | @SwiftLDN
+              .user-actions.not-following.not-muting
+                = link_to '#', class: 'follow-btn btn follow-button' do
+                 = image_tag '', size: '', alt: 'follow'
+        .flex-module-footer
+          = link_to '友達を見つける', '#'
+    .Footer.module.roaming-module
+      .flex-module
+        .flex-module-inner
+          ul.u-cf
+            li.Footer-item.Footer-copyright
+             | @ 2016 YouMe
+            li.Footer-item
+              = link_to 'hoge', '#', class: 'Footer-link'
+            li.Footer-item
+              = link_to 'hoge', '#', class: 'Footer-link'
+            li.Footer-item
+              = link_to 'hoge', '#', class: 'Footer-link'
+            li.Footer-item
+              = link_to 'hoge', '#', class: 'Footer-link'
+            li.Footer-item
+              = link_to 'hoge', '#', class: 'Footer-link'

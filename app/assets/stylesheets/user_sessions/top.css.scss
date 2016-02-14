@@ -1,0 +1,117 @@
+/* variable and method */
+$blockColor: #fff;
+
+@mixin block($width, $height) {
+  background-color: $blockColor;
+  width: $width;
+  height: $height;
+  overflow: hidden;
+}
+
+@mixin form($width, $height: 34px) {
+  width: $width;
+  height: $height;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+@mixin blockHeader($margin) {
+   margin: $margin;
+}
+
+/* basic */
+body {
+  padding-top: 50px;
+}
+
+.basicBackground {
+  height: 100%;
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: -20px;
+}
+
+
+/* top page*/
+.top-page {
+  @extend .basicBackground;
+  background-image: image-url("koho2.jpg");
+}
+
+.top-title {
+  color: #ffffff;
+}
+
+.top-sentence {
+  color: #616161;
+}
+
+.welcome {
+  margin-left: 80px;
+  padding-top: 60px;
+}
+
+.login-div {
+  @include block(400px, 150px);
+  padding-right: 100px;
+  margin-top: 80px;
+}
+
+.signup-div {
+  @include block(400px, 250px);
+  margin-top: 15px;
+  padding-right: 100px;
+}
+
+.signup-header {
+  @include blockHeader(15px 20px);
+}
+
+.signup-form {
+  @include form(350px);
+}
+
+.login-email {
+  @include form(350px);
+}
+
+.login-password {
+  @include form(350px);
+}
+
+.login-password-row {
+  width: 400px;
+  padding-left: 15px;
+  margin-top: 15px;
+}
+
+.remember-me {
+  margin-left: 40px;
+}
+
+.btn-success {
+  width: 150px;
+}
+
+/* login page */
+.login-background {
+  @extend .basicBackground;
+  background-color: #F5F8FA;
+}
+
+.login-block {
+  @include block(700px, 300px);
+  margin-top: 15px;
+}
+
+.login-block-header {
+  @include blockHeader(50px 20px 15px);
+}
+
+.login-button-row {
+  padding-top: 15px;
+  padding-left: 15px;
+}

@@ -1,7 +1,7 @@
 .login-div
-  = form_tag user_sessions_path, method: :post do
+   = form_tag user_sessions_path, method: :post do
     .login-email
-      = text_field_tag :email, '', placeholder: 'メールアドレス', class: "form-control"
+      = email_field_tag :email, '', placeholder: 'メールアドレス', class: "form-control"
     .row.login-password-row
       .col-xs-8
         = password_field_tag :password, '', class: 'form-control', placeholder: 'パスワード'

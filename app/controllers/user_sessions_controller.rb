@@ -1,11 +1,10 @@
 class UserSessionsController < ApplicationController
-  skip_before_filter :require_login, only: [:create]
+  skip_before_filter :require_login, only: [:index, :new, :create]
 
   def index
   end
 
   def new
-    @user = User.new
   end
 
   def create
@@ -19,6 +18,8 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
+    remember_me!
+    forget_me!
     logout
     redirect_to root_url, info: 'Logged out!'
   end

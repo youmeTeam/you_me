@@ -1,2 +1,9 @@
 header.navbar.navbar-fixed-top.navbar-default
   .container
+    nav
+      ul.nav.navbar-nav.navbar-right
+        li
+          - if current_user
+            = link_to "Logout", user_session_path(current_user), method: :delete
+          - else
+            = link_to "Login", user_sessions_path, method: :post

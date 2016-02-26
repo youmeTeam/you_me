@@ -1,2 +1,13 @@
-header.navbar.navbar-fixed-top.navbar-default
+header.navbar.navbar-default.navbar-fixed-top
   .container
+    .navbar-header
+      ul.nav.navbar-nav
+        li.home#global-nav-home
+          = link_to '#', class: 'navbar-brand'
+            = image_tag '/images/commons/logo.png', src: '', alt: ''
+    #navbar.navbar-collapse.collapse
+      ul.nav.navbar-nav.navbar-right
+        li
+          = link_to '#', class: 'navbar-brand'
+            = image_tag '/images/commons/logo.png', src: '', alt: 'avatar'
+        li.button.btn.btn-default.navbar-btn type='button' どりーむ

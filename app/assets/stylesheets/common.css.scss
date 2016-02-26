@@ -12,3 +12,15 @@ body {
   line-height: 18px !important;
   overflow-y: scroll;
 }
+
+header {
+  border-bottom: 1px solid rgba(0,0,0,0.15) !important;
+  background-color: #33C4C5 !important;
+  .container {
+    // padding: 0;
+    // width: 1220px;
+    #navbar {
+      max-width: 1220px;
+    }
+  }
+}

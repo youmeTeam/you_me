@@ -1,5 +1,5 @@
 .main-container.container-fluid
-  .dashboard.dashboard-left
+  .dashboard.dashboard-left.clearfix
     .DashboardProfileCard.module
       = link_to 'profile背景画像', 'users/:id/show', class: 'DashboardProfileCard-bg u-bgUserColor u-block'
       .DashboardProfileCard-content
@@ -34,7 +34,8 @@
                 span.ProfileCardStats-statValue
                   | 45
     .CalenderCard.module
-  .content-main.top-timeline-dreambox#timeline
+      | Calendar
+  .content-main.top-timeline-dreambox#timeline.clearfix
     .timeline-dream-box
       .home-dream-box.dream-box.component.dream-user
     .stream-container
@@ -260,7 +261,7 @@
                       = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
                         = image_tag '', size: '', alt: 'share'
                         | シェアする
-  .dashboard.dashboard-right
+  .dashboard.dashboard-right.clearfix
     .module.roaming-module.wtf-module.has-content
       .flex-module
         .flex-module-header

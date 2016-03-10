@@ -1,24 +1,15 @@
-= form_for @user  do |f|
-  - if @user.errors.any?
-    #error_explanation
-      h2
-        = pluralize @user.errors.count, "error"
-        |  prohibited this user from being saved:
-      ul
-        - @user.errors.full_messages.each do |message|
-          li
-            = message
-  .field
-    = f.label :email
-    br
-    = f.text_field :email
-  .field
-    = f.label :password
-    br
-    = f.password_field :password
-  .field
-    = f.label :password_confirmation
-    br
-    = f.password_field :password_confirmation
-  .actions
-    = f.submit
+.alert.alert-danger.hide#new-error-message
+  | データの登録に失敗しました。
+  #errors
+    ul
+
+= form_for @user, id: 'user-new-form', remote: true  do |f|
+  .form-group
+    .login-email
+      = f.text_field :nickname, class: 'form-control', placeholder: 'ニックネーム'
+    .login-email
+      = f.email_field :email, class: 'form-control', placeholder: 'メールアドレス'
+    .login-password
+      = f.password_field :password, class: 'form-control', placeholder: 'パスワード'
+    .row.login-button-row
+      = f.submit "アカウント作成", class: 'btn btn-primary signup-btn'

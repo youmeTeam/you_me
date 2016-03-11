@@ -21,8 +21,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to activate_path }
-        format.js { render js: "window.location = '#{activate_path}'", success: 'User was successfully created.' }
+        format.html { redirect_to activation_index_path }
+        format.js { render js: "window.location = '#{activation_index_path}'", success: 'User was successfully created.' }
       else
         format.json { render json: { errors: @user.errors.full_messages }, status: 422 }
         format.html { redirect_to new_user_path }

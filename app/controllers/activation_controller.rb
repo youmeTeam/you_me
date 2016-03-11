@@ -1,6 +1,6 @@
 class ActivationController < ApplicationController
-  skip_before_filter :require_login, only: [:activate]
+  skip_before_filter :require_login, only: [:index]
 
-  def activate
+  def index
   end
 end

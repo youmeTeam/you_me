@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'activate' => 'activation#activate'
 
   root to: 'user_sessions#index'
   resources :user_sessions, only: [:index, :new, :create, :destroy]
@@ -9,4 +8,5 @@ Rails.application.routes.draw do
     end
   end
   resources :dreams, only: :index
+  resources :activation, only: :index
 end

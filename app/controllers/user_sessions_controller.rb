@@ -1,10 +1,12 @@
 class UserSessionsController < ApplicationController
-  skip_before_filter :require_login, only: [:index, :new, :create]
+  skip_before_filter :require_login, only: [:index, :new, :create, :destroy]
 
   def index
+    @user = User.new
   end
 
   def new
+    @user = User.new
   end
 
   def create

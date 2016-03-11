@@ -1,0 +1,26 @@
+.basicBackground {
+  height: 100%;
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.signup-mail-page {
+  @extend .basicBackground;
+  background-image: image-url("koho1.jpg");
+  position: relative;
+}
+
+.text {
+  padding-top: 60px;
+  width: 500px;
+  height: 500px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  margin: auto;
+}

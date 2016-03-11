@@ -31,7 +31,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  margin-top: -20px;
 }
 
 
@@ -114,4 +113,18 @@ body {
 .login-button-row {
   padding-top: 15px;
   padding-left: 15px;
+}
+
+/* sign up page */
+.new-user-div {
+  @include blockHeader(80px);
+}
+
+.new-user-head {
+  margin-left: 15px;
+}
+
+.signup-btn {
+  @include form(350px, 50px);
+  width: 350px;
 }

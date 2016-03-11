@@ -10,9 +10,15 @@
 #  updated_at                   :datetime
 #  remember_me_token            :string(255)
 #  remember_me_token_expires_at :datetime
+#  activation_state             :string(255)
+#  activation_token             :string(255)
+#  activation_token_expires_at  :datetime
+#  nickname                     :string(255)
+#  user_name                    :string(255)
 #
 # Indexes
 #
+#  index_users_on_activation_token   (activation_token)
 #  index_users_on_email              (email) UNIQUE
 #  index_users_on_remember_me_token  (remember_me_token)
 #
@@ -24,7 +30,6 @@ class User < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 120 },
             format: { with: VALID_EMAIL_REGEX },
             uniqueness: { case_sensitive: true }
-  validates :password, length: { minimum: 5 }, presence: true,
-            confirmation: true
-  validates :password_confirmation, presence: true
+  validates :password, length: { minimum: 5 }, presence: true
+  validates :nickname, presence: true
 end

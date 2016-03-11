@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'activate' => 'static_pages#activate'
+  get 'activate' => 'activation#activate'
 
   root to: 'user_sessions#index'
   resources :user_sessions, only: [:index, :new, :create, :destroy]

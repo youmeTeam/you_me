@@ -3,11 +3,14 @@ header.navbar.navbar-default.navbar-fixed-top
     .navbar-header
       ul.nav.navbar-nav
         li.home#global-nav-home
-          = link_to '#', class: 'navbar-brand'
-            = image_tag '/images/commons/logo.png', src: '', alt: ''
-    #navbar.navbar-collapse.collapse
+          = link_to '/dreams', class: 'navbar-brand' do
+        li.notifications
+          = link_to '/dreams', class: 'navbar-brand' do
+    .navbar-brand-center
+      = link_to '/', class: 'navbar-brand' do
+    .navbar-collapse.collapse
       ul.nav.navbar-nav.navbar-right
-        li
-          = link_to '#', class: 'navbar-brand'
-            = image_tag '/images/commons/logo.png', src: '', alt: 'avatar'
-        li.button.btn.btn-default.navbar-btn type='button' どりーむ
+        li.dropdown#user-dropdown
+          = link_to '#', class: '' do
+            = image_tag 'avatar.jpeg', size: '', alt: 'プロフィール画像', class: 'navbar-avatarImage'
+        li.button.btn.btn-default.navbar-btn.navbar-dream-btn type='button' ドリーム

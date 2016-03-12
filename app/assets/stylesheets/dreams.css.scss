@@ -11,6 +11,13 @@ $lineColor: #E5E5E5;
 $actionButtonColor: #7F7F7F;
 $richEditorBorderColor: #DCDEE3;
 
+@mixin card_decoration {
+  border: 1px solid;
+  border-color: $cardBorderColor;
+  border-radius: 3px;
+  background-color: white;
+}
+
 
 /* basic */
 .container-fluid {
@@ -26,11 +33,8 @@ $richEditorBorderColor: #DCDEE3;
   float: left;
   width: 290px;
   .DashboardProfileCard {
-    border: 1px solid;
-    border-color: $cardBorderColor;
-    border-radius: 3px;
+    @include card_decoration;
     margin-bottom: 10px;
-    background-color: white;
     .DashboardProfileCard-bg {
       width: 100%;
       height: 120px;
@@ -134,10 +138,7 @@ $richEditorBorderColor: #DCDEE3;
 
   .CalenderCard {
     height: 290px;
-    border: 1px solid;
-    border-color: $cardBorderColor;
-    border-radius: 3px;
-    background-color: white;
+    @include card_decoration;
   }
 }
 
@@ -148,10 +149,7 @@ $richEditorBorderColor: #DCDEE3;
   width: 590px;
   margin: 0 10px;
   .timeline-dream-box {
-    border: 1px solid;
-    border-color: $cardBorderColor;
-    border-radius: 3px;
-    background-color: white;
+    @include card_decoration;
     margin-bottom: 10px;
     .home-dream-box {
       padding: 10px 12px;
@@ -230,10 +228,7 @@ $richEditorBorderColor: #DCDEE3;
         list-style: none;
         .stream-item {
           margin-bottom: 10px;
-          border: 1px solid;
-          border-color: $cardBorderColor;
-          border-radius: 3px;
-          background-color: white;
+          @include card_decoration;
           .context {
             .dream-context {
               padding-top: 12px;
@@ -338,10 +333,7 @@ $richEditorBorderColor: #DCDEE3;
   float: left;
   width: 290px;
   .has-content {
-    border: 1px solid;
-    border-color: $cardBorderColor;
-    border-radius: 3px;
-    background-color: white;
+    @include card_decoration;
     margin-bottom: 10px;
     .flex-module {
       padding: 15px;
@@ -442,12 +434,9 @@ $richEditorBorderColor: #DCDEE3;
   }
   .Footer {
     margin-bottom: 10px;
-    background-color: white;
     .flex-module {
       padding: 15px;
-      border: 1px solid;
-      border-color: $cardBorderColor;
-      border-radius: 3px;
+      @include card_decoration;
       .flex-module-inner {
         color: $textLightColor;
         font-size: 12px;

@@ -1,0 +1,16 @@
+.reset-container
+  .reset-section
+    .reset-header
+      | パスワードリセット
+      /.error-header
+      /  | 入力されたメールアドレスは登録されていません
+    p
+      | メールアドレスを入力してください
+
+    = form_tag password_resets_path, method: :post, id: 'password-reset', remote: true do
+      .field.row
+        .col-xs-6
+          = email_field_tag :email, '', class: 'form-control', placeholder: 'メールアドレス'
+        .col-xs-4.hide#error_explanation
+          | めーるあどうれすを
+      = submit_tag 'パスワードをリセット', class: 'btn btn-primary', id: 'reset-button'

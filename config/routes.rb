@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :activate
+      put :confirm
     end
   end
   resources :dreams, only: :index
   resources :activation, only: :index
+  resources :password_resets
 end

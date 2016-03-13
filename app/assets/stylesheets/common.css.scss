@@ -66,6 +66,9 @@ header {
           position: absolute;
         }
       }
+      a[aria-expanded="true"] {
+        background-color: #33C4C5;
+      }
     }
     .navbar-dream-btn {
       border-color: #E67E22;

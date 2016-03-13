@@ -1,0 +1,16 @@
+.top-page
+  .row
+    .col-sm-4
+      .welcome
+        h1.top-title
+          | You Meへようこそ
+        br
+        h4.top-title
+          | あなたが見た夢を記録しましょう。そして、その
+          br
+          |  夢を共有して新しい仲間を見つけましょう。
+    .col-sm-6.col-sm-offset-2
+      == render 'login_form'
+  .row
+    .col-sm-6.col-sm-offset-6
+      == render 'signup_form'

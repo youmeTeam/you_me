@@ -11,6 +11,12 @@ header.navbar.navbar-default.navbar-fixed-top
     .navbar-collapse.collapse
       ul.nav.navbar-nav.navbar-right
         li.dropdown#user-dropdown
-          = link_to '#', class: '' do
-            = image_tag 'avatar.jpeg', size: '', alt: 'プロフィール画像', class: 'navbar-avatarImage'
+          = link_to '#', class: 'dropdown-toggle', data: { toggle: 'dropdown' } do
+            = image_tag 'arrow.png', size: '', alt: 'プロフィール画像', class: 'navbar-avatarImage'
+          .dropdown-menu
+            ul
+              li
+                = link_to "髙橋宗也", 'mypage'
+              li
+                = link_to "Logout", user_session_path(current_user), method: :delete
         li.button.btn.btn-default.navbar-btn.navbar-dream-btn type='button' ドリーム

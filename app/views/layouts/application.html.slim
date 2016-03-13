@@ -9,5 +9,7 @@ html
     link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css"
     script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js" type="text/javascript"
   body
-    = render 'layouts/header'
-    = yield
+    == render 'layouts/header'
+    - flash.each do |message_type, message|
+      = content_tag :div, message, class: "alert alert-#{message_type}"
+    == yield

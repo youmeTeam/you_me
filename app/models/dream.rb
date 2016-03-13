@@ -15,7 +15,7 @@
 #
 # Foreign Keys
 #
-#  fk_rails_af8bd82354  (user_id => users.id)
+#  fk_rails_2e41fcbad5  (user_id => users.id)
 #
 
 class Dream < ActiveRecord::Base

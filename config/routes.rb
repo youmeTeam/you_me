@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :dreams, only: :index
   resources :activation, only: :index
   resources :password_resets
+  resources :sent_password_resets, only: :index
 end

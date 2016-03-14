@@ -8,11 +8,11 @@ class PasswordResetsController < ApplicationController
   def create
     if @user = User.find_by_email(params[:email])
       @user.deliver_reset_password_instructions!
-      redirect_to root_path, flash: { info: 'パスワード再設定メールを送信しました' }
+      render js: "window.location = '#{ sent_password_resets_path }'", flash: { info: 'パスワード再設定メールを送信しました' }
     elsif params[:email].blank?
       render json: { errors: 'メールアドレスを入力してください' }
     else
-      render action: 'new'
+      render json: { errors: '入力したメールアドレスは登録されていません'}
     end
   end
 

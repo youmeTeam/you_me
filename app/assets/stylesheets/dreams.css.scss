@@ -1,0 +1,462 @@
+/* variable and method */
+$mainColor: #33C4C5;
+$subColor: #E67E22;
+$textColor: #292F33;
+$textLightColor: #8899A6;
+$labelLightColor: #66757F;
+$cardBorderColor: #E5E6E9 #DFE0E4 #D0D1D5;
+$selectButtonColor: #4E5665;
+$placeholderColor: #CCD6DD;
+$lineColor: #E5E5E5;
+$actionButtonColor: #7F7F7F;
+$richEditorBorderColor: #DCDEE3;
+
+@mixin card_decoration {
+  border: 1px solid;
+  border-color: $cardBorderColor;
+  border-radius: 3px;
+  background-color: white;
+}
+
+
+/* basic */
+.container-fluid {
+  padding-top: 10px;
+  padding-bottom: 30px;
+  margin: 0 auto;
+  max-width: 1220px;
+  min-width: 1220px;
+}
+
+
+/* left dashboard */
+.dashboard-left {
+  float: left;
+  width: 290px;
+  .DashboardProfileCard {
+    @include card_decoration;
+    margin-bottom: 10px;
+    .DashboardProfileCard-bg {
+      width: 100%;
+      height: 120px;
+      padding: 0 1px;
+      background-color: $mainColor;
+      background-image: url("kyoka.png");
+      background-size: 100%;
+      background-position: 0 50%;
+      border-radius: 3px 3px 0 0;
+    }
+    .u-block {
+      display: block;
+    }
+    .DashboardProfileCard-content {
+      .ProfileCardAvatar {
+        text-align: center;
+        .DashboardProfileCard-avatarLink {
+          .DashboardProfileCard-avatarImage {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-sizing: border-box;
+            margin-top: -44px;
+            color: white;
+          }
+        }
+      }
+      .u-inlineBlock {
+        display: inline-block !important;
+        max-width: 100%;
+      }
+      .DashboardProfileCard-userFields {
+        text-align: center;
+        .DashboardProfileCard-name {
+          margin-top: 6px;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 21px;
+          .u-textInheritColor {
+            color: inherit;
+          }
+        }
+        .u-textTruncate {
+          max-width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          word-wrap: normal;
+        }
+        .DashboardProfileCard-screenname {
+          font-size: 12px;
+          margin-bottom: 14px;
+          a {
+            color: $labelLightColor;
+            &:hover {
+              color: $mainColor;
+            }
+          }
+        }
+      }
+      .ProfileCardStats {
+        border-top: 1px solid $lineColor;
+        margin: 0 11px;
+        padding-top: 10px;
+        .ProfileCardStats-statList {
+          list-style: none;
+          display:table;
+          padding-left: 0;
+          .Arrange-sizeFit {
+            display:table-cell;
+            width: 1%;
+            .ProfileCardStats-statLink {
+              &:hover {
+                .ProfileCardStats-statLabel {
+                  color: $mainColor;
+                }
+              }
+              .ProfileCardStats-statLabel {
+                color: $textLightColor;
+                font-size: 10px;
+                letter-spacing: .02em;
+                overflow: hidden;
+              }
+              .ProfileCardStats-statValue {
+                color: $mainColor;
+                font-size: 18px;
+                font-weight: 500;
+                display: block;
+                padding-top: 0px;
+              }
+            }
+            .u-linkClean {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .CalenderCard {
+    height: 290px;
+    @include card_decoration;
+  }
+}
+
+
+/* timeline */
+.content-main {
+  float: left;
+  width: 590px;
+  margin: 0 10px;
+  .timeline-dream-box {
+    @include card_decoration;
+    margin-bottom: 10px;
+    .home-dream-box {
+      padding: 10px 12px;
+      position: relative;
+      .top-timeline-tweet-box-user-image {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        left: 13px;
+        top: 12px;
+        position: absolute;
+      }
+      .dream-form {
+        margin-left: 60px;
+        .dream-content {
+          margin-bottom: 8px;
+          .RichEditor {
+            width: 505px;
+            border: 1px solid $richEditorBorderColor;
+            .RichEditor-scrollContainer {
+              padding: 8px 10px;
+              [contenteditable=true]:empty:before {
+                content: attr(placeholder);
+                display: block;
+                color: $placeholderColor;
+              }
+              .dream-box {
+                min-height: 64px;
+                overflow: hidden;
+                vertical-align: top;
+                outline: none;
+              }
+            }
+          }
+        }
+        .DreamBoxToolbar {
+          display: flex;
+          align-items: center;
+          .DreamBoxToolbar-dreamButton {
+            float: right;
+            margin-left: auto;
+            .bootstrap-select {
+              width: 100px;
+              button {
+                padding: 6px;
+                padding-left: 0;
+                color: $selectButtonColor;
+                font-weight: bold;
+                span {
+                  text-align: center;
+                }
+              }
+            }
+            .dream-btn {
+              padding: 6px 16px;
+              margin-left: 10px;
+              display: inline-block;
+              font-weight: bold;
+              border-color: $subColor;
+              background-color: white;
+              color: $subColor;
+              &:hover {
+                background-color: $subColor;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .stream-container {
+    .stream {
+      .stream-items {
+        padding: 0;
+        list-style: none;
+        .stream-item {
+          margin-bottom: 10px;
+          @include card_decoration;
+          .context {
+            .dream-context {
+              padding-top: 12px;
+              padding-bottom: 10px;
+              text-align: center;
+              border-bottom: 1px solid $lineColor;
+              .dream-date {
+                font-size: 24px;
+                line-height: 100%;
+                letter-spacing: 6px;
+              }
+            }
+          }
+          .original-dream {
+            padding: 9px 12px;
+            .content {
+              .stream-item-header {
+                margin-bottom: 11px;
+                position: relative;
+                .stream-item-header-right {
+                  margin-left: 58px;
+                  float: left;
+                  height: 48px;
+                  .userFields {
+                    line-height: 24px;
+                    .avatar {
+                      width: 48px;
+                      height: 48px;
+                      border-radius: 50%;
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                    }
+                    &:hover {
+                      text-decoration: none;
+                      .fullname {
+                        text-decoration: underline;
+                        color: $mainColor;
+                      }
+                    }
+                    .fullname {
+                      color: $textColor;
+                    }
+                    .username {
+                      font-size: 13px;
+                      color: $textLightColor;
+                    }
+                  }
+                  .posted-time {
+                    .dream-timestamp {
+                      color: $textLightColor;
+                      font-size: 12px;
+                      &:hover {
+                        color: $mainColor;
+                      }
+                    }
+                  }
+                }
+                .ProfileDream-action--more {
+                  float: right;
+                }
+              }
+              .DreamTextSize {
+                font-size: 14px;
+                line-height: 18px;
+              }
+              .dream-text {
+                word-wrap: break-word;
+              }
+              .stream-item-footer {
+                font-size: 12px;
+                .ProfileDream-actionList {
+                  border-top: 1px solid $lineColor;
+                  padding-top: 6px;
+                  line-height: 1;
+                  .ProfileDream-action {
+                    width: 120px;
+                    display: inline-block;
+                    .ProfileDream-actionButton {
+                      color: $actionButtonColor;
+                      display: inline-block;
+                      font-weight: bold;
+                      overflow: visible;
+                    }
+                  }
+                  .ProfileDream-action--share {
+                    margin-left: 18px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* right dashboard */
+.dashboard-right {
+  float: left;
+  width: 290px;
+  .has-content {
+    @include card_decoration;
+    margin-bottom: 10px;
+    .flex-module {
+      padding: 15px;
+      .flex-module-header {
+        margin-bottom: 10px;
+        h3 {
+          margin: 0;
+          text-rendering: optimizeLegibility;
+          font-size: 18px;
+          font-weight: 300;
+          line-height: 22px;
+          color: $labelLightColor;
+          display: inline;
+        }
+        small {
+          line-height: 1;
+          padding-right: 4px;
+        }
+        .btn-link {
+          color: $mainColor;
+          font-size: 12px;
+          font: inherit;
+          overflow: visible;
+        }
+      }
+      .dashboard-user-popularity {
+        .account-summary {
+          position: relative;
+          display: block;
+          .content {
+            min-height: 48px;
+            margin-left: 58px;
+            margin-right: 20px;
+            .account-group {
+              display: block;
+              line-height: 16px;
+              &:hover {
+                text-decoration: none;
+                .fullname {
+                  text-decoration: underline;
+                  color: $mainColor !important;
+                }
+              }
+              .avatar {
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                position: absolute;
+                top: 0;
+                left: 0;
+              }
+              .account-group-inner {
+                display: block;
+                width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: $textLightColor;
+                line-height: 16px;
+                .fullname {
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: $textColor;
+                }
+                .username {
+                  font-size: 13px;
+                }
+              }
+            }
+            .user-actions {
+              button {
+                margin-top: 3px;
+                padding: 6px 11px 4px 32px;
+                cursor: pointer;
+                font-size: 13px;
+                font-weight: bold;
+                line-height: normal;
+                color: $textColor;
+                position: relative;
+                .Icon--follow {
+                  position: absolute;
+                  top: 0px;
+                  left: 6px;
+                }
+              }
+            }
+          }
+        }
+        .account-summary:not(:first-child) {
+          margin-top: 10px;
+        }
+        .flex-module-inner {
+          color: $textLightColor;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .Footer {
+    margin-bottom: 10px;
+    .flex-module {
+      padding: 15px;
+      @include card_decoration;
+      .flex-module-inner {
+        color: $textLightColor;
+        font-size: 12px;
+        ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          line-height: 18px;
+          .Footer-item {
+            float: left;
+            padding-right: 8px;
+            display: inline;
+            text-align: ingerit;
+            .Footer-link {
+              color: $textLightColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}

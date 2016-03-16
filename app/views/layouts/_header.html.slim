@@ -18,6 +18,7 @@ header.navbar.navbar-default.navbar-fixed-top
               - if current_user
                 li
                   = link_to "髙橋宗也", '#'
+                li
                   = link_to "Logout", user_session_path(current_user), method: :delete
               - else
                 li

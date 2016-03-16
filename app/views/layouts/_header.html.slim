@@ -1,9 +1,22 @@
-header.navbar.navbar-fixed-top.navbar-default
+header.navbar.navbar-default.navbar-fixed-top
   .container
-    nav
+    .navbar-header
+      ul.nav.navbar-nav
+        li.home#global-nav-home
+          = link_to '/dreams', class: 'navbar-brand' do
+        li.notifications
+          = link_to '/dreams', class: 'navbar-brand' do
+    .navbar-brand-center
+      = link_to '/', class: 'navbar-brand' do
+    .navbar-collapse.collapse
       ul.nav.navbar-nav.navbar-right
-        li
-          - if current_user
-            = link_to "Logout", user_session_path(current_user), method: :delete
-          - else
-            = link_to "Login", user_sessions_path, method: :post
+        li.dropdown#user-dropdown
+          = link_to '#', class: 'dropdown-toggle', data: { toggle: 'dropdown' } do
+            = image_tag 'arrow.png', size: '', alt: 'プロフィール画像', class: 'navbar-avatarImage'
+          .dropdown-menu
+            ul
+              li
+                = link_to "髙橋宗也", 'mypage'
+              li
+                = link_to "Logout", user_session_path(current_user), method: :delete
+        li.button.btn.btn-default.navbar-btn.navbar-dream-btn type='button' ドリーム

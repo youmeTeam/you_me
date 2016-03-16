@@ -18,5 +18,6 @@ header.navbar.navbar-default.navbar-fixed-top
               li
                 = link_to "髙橋宗也", 'mypage'
               li
-                = link_to "Logout", user_session_path(current_user), method: :delete
+                = link_to "Logout", '#'
+                /= link_to "Logout", user_session_path(current_user), method: :delete
         li.button.btn.btn-default.navbar-btn.navbar-dream-btn type='button' ドリーム

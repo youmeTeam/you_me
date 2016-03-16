@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   end
   resources :dreams, only: :index
   resources :activation, only: :index
-  resources :password_resets
+  resources :password_resets, only: [:new, :create, :edit, :update]
   resources :sent_password_resets, only: :index
 end

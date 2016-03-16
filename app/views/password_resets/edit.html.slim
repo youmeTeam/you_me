@@ -8,8 +8,9 @@
     = form_for @user, url: password_reset_path(@token), html: { method: :put } do |f|
       .field
         = f.label :email
-        = @user.email
-      .field
+        .reset-email
+          = @user.email
+      .field.reset-password
         = f.password_field :password, class: 'form-control', placeholder: 'パスワード'
       .actions
         = f.submit 'パスワードリセット', class: 'btn btn-primary'

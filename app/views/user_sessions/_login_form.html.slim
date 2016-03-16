@@ -10,5 +10,9 @@
     .remember-me
       = label_tag :remember_me, class: "checkbox inline" do
         = check_box_tag :remember_me, params[:remember], true
-        span.top-sentence
-          | 保存する
+        .row
+          span.top-sentence.col-xs-4
+            | 保存する
+          .col-xs-8
+           = link_to 'パスワードを忘れた場合', new_password_reset_path
+

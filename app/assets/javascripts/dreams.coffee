@@ -1,3 +1,8 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+dream = ->
+  $('.dream-btn').on('click', ->
+    value = $('#dream-box-home-timeline').html()
+    $('#content-param').val(value);
+  )
+
+$(document).ready(dream)
+$(document).on('page:load', dream)

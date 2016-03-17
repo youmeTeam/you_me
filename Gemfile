@@ -44,6 +44,7 @@ gem 'daemons', '1.2.3'
 # HTMLメールの作成時にCSSを楽に使えるようにしてくれる
 gem 'roadie-rails', '1.1.0'
 gem 'config', '1.0.0'
+gem 'kaminari', '0.16.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

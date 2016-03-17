@@ -9,6 +9,8 @@ table
         | Crypted password
       th
         | Salt
+      th
+        | user_name
       th[colspan="3"]
   tbody
     - @users.each do |user|
@@ -19,6 +21,8 @@ table
           = user.crypted_password
         td
           = user.salt
+        td
+          = user.user_name
         td
           = link_to 'Show', user
         td

@@ -180,3 +180,17 @@
               = link_to 'プライバシー', '#', class: 'Footer-link'
             li.Footer-item
               = link_to '開発者', '#', class: 'Footer-link'
+
+/.modal-content role='document'
+/  .modal-header
+/    h3.modal-title#global-dream-dialog-header
+/      | 投稿する
+/    .modal-dream-form-container
+/      = form_for @dream do |f|
+
+.modal-content
+  p
+    | 閉じるか背景をクリックするとモーダルウィンドウを終了します。
+  p
+    a.button-link#modal-close
+      | 閉じる

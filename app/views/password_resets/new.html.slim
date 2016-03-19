@@ -5,9 +5,4 @@
     p
       | メールアドレスを入力してください
 
-    = form_tag password_resets_path, method: :post, id: 'password-reset', remote: true do
-      .field.row
-        .col-xs-5.reset-email
-          = email_field_tag :email, '', class: 'form-control', placeholder: 'メールアドレス'
-        .col-xs-7.hide#error-explanation
-      = submit_tag 'パスワードをリセット', class: 'btn btn-primary', id: 'reset-button'
+    = render 'reset_password_form'

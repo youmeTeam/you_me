@@ -2,6 +2,7 @@ class DreamsController < ApplicationController
 
   def index
     @dream = current_user.dreams.new
+    @dreams = current_user.dreams.order(created_at: :desc).page(params[:page])
   end
 
   def create

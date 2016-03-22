@@ -45,6 +45,7 @@ gem 'daemons', '1.2.3'
 gem 'roadie-rails', '1.1.0'
 gem 'config', '1.0.0'
 gem 'kaminari', '0.16.3'
+gem 'autosize-rails', '1.18.17'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

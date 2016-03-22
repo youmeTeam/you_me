@@ -64,7 +64,6 @@
                           small.time
                             = link_to 'dreams/:id/show', class: 'dream-timestamp' do
                               span._timestamp
-                                /| 2016年2月1日 23:59
                                 = Time.parse(dream.created_at.to_s).strftime('%Y年 %m月 %d日 %H:%M')
                       .ProfileDream-action--more
                         .dropdown

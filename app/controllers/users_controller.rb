@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
+    @user.user_name = @user.email.match(/\A[\w+\-.]+@/).to_s.chop
     respond_to do |format|
       if @user.save
         format.html { redirect_to activation_index_path }

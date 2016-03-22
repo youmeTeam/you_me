@@ -10,9 +10,8 @@ class UserSessionsController < ApplicationController
   end
 
   def create
-    # TODO: 遷移先をタイムライン画面に変更する
     if @user = login(params[:email], params[:password], params[:remember])
-      redirect_back_or_to users_path, success: 'Login successful'
+      redirect_back_or_to dreams_path
     else
       flash.now[:danger] = 'Login failed'
       render new_user_session_path

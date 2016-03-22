@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160306071725) do
+ActiveRecord::Schema.define(version: 20160311130612) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   limit: 4,     default: 0, null: false
@@ -40,23 +40,27 @@ ActiveRecord::Schema.define(version: 20160306071725) do
   add_index "dreams", ["user_id"], name: "index_dreams_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                        limit: 255, null: false
-    t.string   "crypted_password",             limit: 255
-    t.string   "salt",                         limit: 255
+    t.string   "email",                           limit: 255, null: false
+    t.string   "crypted_password",                limit: 255
+    t.string   "salt",                            limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "remember_me_token",            limit: 255
+    t.string   "remember_me_token",               limit: 255
     t.datetime "remember_me_token_expires_at"
-    t.string   "activation_state",             limit: 255
-    t.string   "activation_token",             limit: 255
+    t.string   "activation_state",                limit: 255
+    t.string   "activation_token",                limit: 255
     t.datetime "activation_token_expires_at"
-    t.string   "nickname",                     limit: 255
-    t.string   "user_name",                    limit: 255
+    t.string   "nickname",                        limit: 255
+    t.string   "user_name",                       limit: 255
+    t.string   "reset_password_token",            limit: 255
+    t.datetime "reset_password_token_expires_at"
+    t.datetime "reset_password_email_sent_at"
   end
 
   add_index "users", ["activation_token"], name: "index_users_on_activation_token", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
 
   add_foreign_key "dreams", "users"
 end

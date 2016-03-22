@@ -37,23 +37,7 @@
     .CalenderCard.module
       | Calendar
   .content-main.top-timeline-dreambox#timeline.clearfix
-    .timeline-dream-box
-      .home-dream-box.dream-box.component.dream-user
-        = image_tag 'avatar.jpeg', size: '', alt: 'プロフィール画像', class: 'top-timeline-tweet-box-user-image'
-        .dream-form.is-minimalButtonLabels
-          = form_for @dream, url: dreams_path, class: 'dream-form is-minimalButtonLabels' do |f|
-            .dream-content
-              .RichEditor
-                .RichEditor-scrollContainer
-                  .dream-box#dream-box-home-timeline contenteditable='true' placeholder='どんな夢を見たの？' spellcheck='true' role='textbox' aria-multiline='true'
-                  input.hide#content-param name='dream[content]' value=""
-            .DreamBoxToolbar
-              .DreamBoxExtras-item.DreamBox-mediaPicker
-              .DreamBoxToolbar-dreamButton.dream-button
-                select.selectpicker
-                  option value="1" 公開
-                  option value="2" 自分のみ
-                = f.submit 'ドリーム', class: 'btn btn-default primary-btn dream-action dream-btn', disabled: 'disabled'
+    = render 'dream_form'
     .stream-container
       .stream
         ol.stream-items#stream-items-id
@@ -180,26 +164,4 @@
             li.Footer-item
               = link_to '開発者', '#', class: 'Footer-link'
 
-.modal.fade#dream-modal tabindex='-1' role='dialog' aria-labelledby='dream-modal-label'
-  .modal-dialog role='document'
-    .modal-content
-      .modal-header
-        button.close type='button' data-dismiss='modal' aria-label='Close'
-          span aria-hidden='true'
-            | &times;
-        .row
-          .col-xs-4.col-xs-offset-5
-            h4.modal-title#dream-modal-label
-              | 投稿する
-      = form_for @dream do |f|
-        .modal-body
-          .form-group
-            = f.text_area :content, class: 'form-control', placeholder: 'どんな夢を見たの？'
-        .modal-footer
-          .form-group
-            select.selectpicker
-              option value='1'
-                | 公開
-              option value='2'
-                | 非公開
-            = f.submit 'ドリーム', class: 'btn primary-btn btn-warning', disabled: 'disabled'
+= render 'modal_dream_form'

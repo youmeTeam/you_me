@@ -1,0 +1,23 @@
+.modal.fade#dream-modal tabindex='-1' role='dialog' aria-labelledby='dream-modal-label'
+  .modal-dialog role='document'
+    .modal-content
+      .modal-header
+        button.close type='button' data-dismiss='modal' aria-label='Close'
+          span aria-hidden='true'
+            | &times;
+        .row
+          .col-xs-4.col-xs-offset-5
+            h4.modal-title#dream-modal-label
+              | 投稿する
+      = form_for @dream do |f|
+        .modal-body
+          .form-group
+            = f.text_area :content, class: 'form-control', placeholder: 'どんな夢を見たの？'
+        .modal-footer
+          .form-group
+            select.selectpicker
+              option value='1'
+                | 公開
+              option value='2'
+                | 非公開
+            = f.submit 'ドリーム', class: 'btn primary-btn btn-warning modal-dream-btn', disabled: 'disabled'

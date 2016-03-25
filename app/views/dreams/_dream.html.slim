@@ -2,7 +2,7 @@ li.stream-item.expanding-stream-item
   .context
     .dream-context
       span.dream-date
-        = Date.parse(dream.created_at.to_s).strftime('%Y年%m月%d日')
+        = parse_time_format(dream, Date)
   .dream.original-dream
     .content
       .stream-item-header.clearfix
@@ -19,7 +19,7 @@ li.stream-item.expanding-stream-item
             small.time
               = link_to 'dreams/:id/show', class: 'dream-timestamp' do
                 span._timestamp
-                  = Time.parse(dream.created_at.to_s).strftime('%Y年 %m月 %d日 %H:%M')
+                  = parse_time_format(dream, Time)
         .ProfileDream-action--more
           .dropdown
             = link_to '#', class: 'ProfileDream-actionButton u-textUserColorHover dropdown-toggle', data: { toggle: 'dropdown' } do

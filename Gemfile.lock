@@ -216,22 +216,22 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (= 2.7.0)
-  autosize-rails (= 1.18.17)
+  autosize-rails
   bootstrap-sass (>= 3.3.4)
   byebug
   coffee-rails (~> 4.1.0)
-  config (= 1.0.0)
-  daemons (= 1.2.3)
-  delayed_job (= 4.1.1)
-  delayed_job_active_record (= 4.1.0)
+  config
+  daemons
+  delayed_job
+  delayed_job_active_record
   html2slim (= 0.2.0)
   jbuilder (~> 2.0)
   jquery-rails
-  kaminari (= 0.16.3)
+  kaminari
   mysql2 (= 0.3.18)
   pry-rails
   rails (= 4.2.0)
-  roadie-rails (= 1.1.0)
+  roadie-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   slim-rails (= 3.0.1)

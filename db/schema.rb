@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317153416) do
+ActiveRecord::Schema.define(version: 20160325134432) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   limit: 4,     default: 0, null: false
@@ -39,6 +39,13 @@ ActiveRecord::Schema.define(version: 20160317153416) do
 
   add_index "dreams", ["user_id"], name: "index_dreams_on_user_id", using: :btree
 
+  create_table "follows", force: :cascade do |t|
+    t.integer  "user_id",        limit: 4
+    t.integer  "target_user_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                           limit: 255, null: false
     t.string   "crypted_password",                limit: 255
@@ -55,7 +62,7 @@ ActiveRecord::Schema.define(version: 20160317153416) do
     t.string   "reset_password_token",            limit: 255
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
-    t.string   "profile_img",                     limit: 255
+    t.string   "avatar",                          limit: 255
   end
 
   add_index "users", ["activation_token"], name: "index_users_on_activation_token", using: :btree

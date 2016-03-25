@@ -5,7 +5,6 @@ dream = ->
   )
 
   $('#dream_content').autosize()
-  $('.selectpicker').selectpicker()
 
   $('#dream_content').keyup ->
     if !$(this).val()

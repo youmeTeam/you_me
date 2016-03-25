@@ -36,16 +36,16 @@ gem 'annotate', '2.7.0'
 gem 'html2slim', '0.2.0'
 gem 'slim-rails', '3.0.1'
 gem 'bootstrap-sass', '>= 3.3.4'
-gem 'delayed_job', '4.1.1'
-gem 'delayed_job_active_record', '4.1.0'
+gem 'delayed_job'
+gem 'delayed_job_active_record'
 
 # デプロイ先でデーモンとして動かすのに必要
-gem 'daemons', '1.2.3'
+gem 'daemons'
 # HTMLメールの作成時にCSSを楽に使えるようにしてくれる
-gem 'roadie-rails', '1.1.0'
-gem 'config', '1.0.0'
-gem 'kaminari', '0.16.3'
-gem 'autosize-rails', '1.18.17'
+gem 'roadie-rails'
+gem 'config'
+gem 'kaminari'
+gem 'autosize-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

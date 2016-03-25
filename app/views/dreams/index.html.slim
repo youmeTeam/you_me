@@ -41,7 +41,7 @@
     .stream-container
       .stream
         ol.stream-items#stream-items-id
-          - if !@dreams.blank?
+          - if @dreams.present?
             .page
               = render @dreams
     = paginate @dreams

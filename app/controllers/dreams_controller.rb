@@ -1,8 +1,10 @@
 class DreamsController < ApplicationController
 
+  # GET /dream.json
   def index
-    @dream = current_user.dreams.new
-    @dreams = current_user.dreams.order(created_at: :desc).page(params[:page])
+    @dream = Dream.new
+    @dreams = Dream.all.page(params[:page])
+    render
   end
 
   def create
@@ -15,7 +17,6 @@ class DreamsController < ApplicationController
   end
 
   private
-
     def dream_params
       params.require(:dream).permit(:content)
     end

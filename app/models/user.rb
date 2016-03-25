@@ -18,7 +18,7 @@
 #  reset_password_token            :string(255)
 #  reset_password_token_expires_at :datetime
 #  reset_password_email_sent_at    :datetime
-#  profile_img                     :string(255)
+#  avatar                          :string(255)
 #
 # Indexes
 #
@@ -29,7 +29,7 @@
 #
 
 class User < ActiveRecord::Base
-  has_many :dreams, dependent: :destroy
+  has_many :dreams, dependent: :delete_all
 
   authenticates_with_sorcery!
 

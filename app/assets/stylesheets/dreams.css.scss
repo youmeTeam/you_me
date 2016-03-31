@@ -469,17 +469,13 @@ $modal-width: 400px;
 }
 
 #new_dream {
-  padding: 15px 8px;
+  padding-top: 5px;
 }
 
 .modal-dream-btn {
   border-color: #E67E22;
   background-color: #FFF;
   color: #E67E22;
-  &:hover {
-    background-color: #E67E22;
-    color: white;
-  }
 }
 
 .modal-dream-btn {

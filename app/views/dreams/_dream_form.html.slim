@@ -7,11 +7,15 @@
           .RichEditor
             .RichEditor-scrollContainer
               .dream-box#dream-box-home-timeline contenteditable='true' placeholder='どんな夢を見たの？' spellcheck='true' role='textbox' aria-multiline='true'
-              input.hide#content-param name='dream[content]' value=""
+              = f.hidden_field :content, id: 'content-param'
         .DreamBoxToolbar
           .DreamBoxExtras-item.DreamBox-mediaPicker
-          .DreamBoxToolbar-dreamButton.dream-button
-            select.selectpicker
-              option value="1" 公開
-              option value="2" 自分のみ
-            = f.submit 'ドリーム', class: 'btn btn-default primary-btn dream-action dream-btn', disabled: 'disabled'
+          .DreamBoxToolbar-dreamButton.dream-button.row
+            .col-xs-offset-1.col-xs-4
+              select.selectpicker
+                option value="1"
+                  | 公開
+                option value="2"
+                  | 自分のみ
+            .col-xs-offset-1.col-xs-3
+              = f.submit 'ドリーム', class: 'btn btn-default primary-btn dream-action dream-btn', disabled: 'disabled'

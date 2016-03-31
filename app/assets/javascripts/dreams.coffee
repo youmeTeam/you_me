@@ -5,6 +5,7 @@ dream = ->
   )
 
   $('#dream_content').autosize()
+  $('.selectpicker').selectpicker()
 
   $('#dream_content').keyup ->
     if !$(this).val()
@@ -19,6 +20,10 @@ dream = ->
       $('.dream-btn').prop('disabled', false)
 
   $('.stream-items .page').infinitescroll
+    loading: {
+      img: 'http://www.mytreedb.com/uploads/mytreedb/loader/ajax_loader_blue_48.gif'
+    }
+
     navSelector: 'ul.pagination'
     nextSelector: 'ul.pagination a[rel=next]'
     itemSelector: '.stream-items li.stream-item'

@@ -14,10 +14,9 @@
           .form-group
             = f.text_area :content, class: 'form-control', placeholder: 'どんな夢を見たの？'
         .modal-footer
-          .form-group
-            select.selectpicker
-              option value='1'
-                | 公開
-              option value='2'
-                | 非公開
-            = f.submit 'ドリーム', class: 'btn primary-btn btn-warning modal-dream-btn', disabled: 'disabled'
+          select.selectpicker
+            option value='1'
+              | 公開
+            option value='2'
+              | 非公開
+          = f.submit 'ドリーム', class: 'btn primary-btn btn-warning modal-dream-btn', disabled: 'disabled'

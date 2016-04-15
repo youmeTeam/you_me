@@ -1,0 +1,51 @@
+li.stream-item.expanding-stream-item
+  .context
+    .dream-context
+      span.dream-date
+        = parse_time_format(dream, Date)
+  .dream.original-dream
+    .content
+      .stream-item-header.clearfix
+        .stream-item-header-right
+          = link_to 'users/:id/show', class: 'userFields' do
+            = image_tag 'avatar.jpeg', size: '', alt: 'avatar', class: 'avatar'
+            strong.fullname
+              = current_user.nickname
+            span.username
+              b
+                |  @
+                = current_user.user_name
+          .posted-time
+            small.time
+              = link_to 'dreams/:id/show', class: 'dream-timestamp' do
+                span._timestamp
+                  = parse_time_format(dream, Time)
+        .ProfileDream-action--more
+          .dropdown
+            = link_to '#', class: 'ProfileDream-actionButton u-textUserColorHover dropdown-toggle', data: { toggle: 'dropdown' } do
+              = image_tag 'arrow.png', size: '', alt: 'more'
+            .dropdown-menu
+              ul
+                li
+                  = link_to 'hoge', '#'
+                li
+                  = link_to 'fuga', '#'
+                li
+                  = link_to 'hoge', '#'
+      .js-dream-text-container
+        p.DreamTextSize.dream-text
+          = dream.content
+      .stream-item-footer
+        .ProfileDream-actionList
+          .ProfileDream-action.ProfileDream-action--favorite
+            = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
+              = image_tag 'favorite.png', size: '20x20', alt: 'favorite', class: 'favorite action-image'
+              | お気に入り
+          .ProfileDream-action.ProfileDream-action--comment
+            = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
+              = image_tag 'comment.png', size: '20x20', alt: 'comment', class: 'comment action-image'
+              | コメントする
+          .ProfileDream-action.ProfileDream-action--share
+            = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
+              = image_tag 'share.png', size: '20x20', alt: 'share', class: 'share action-image'
+              | シェアする

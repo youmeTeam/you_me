@@ -1,3 +1,31 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+dream = ->
+  $('.dream-btn').on('click', ->
+    value = $('#dream-box-home-timeline').html()
+    $('#content-param').val(value)
+  )
+
+  $('.modal-form').autosize()
+
+  $('.modal-form').keyup ->
+    if !$(this).val()
+      $('.btn-warning').prop('disabled', true)
+    else
+      $('.btn-warning').prop('disabled', false)
+
+  $('.dream-box').keyup ->
+    if !$('#dream-box-home-timeline').html()
+      $('.dream-btn').prop('disabled', true)
+    else
+      $('.dream-btn').prop('disabled', false)
+
+  $('.stream-items .page').infinitescroll
+    loading: {
+      img: 'http://www.mytreedb.com/uploads/mytreedb/loader/ajax_loader_blue_48.gif'
+    }
+
+    navSelector: 'ul.pagination'
+    nextSelector: 'ul.pagination a[rel=next]'
+    itemSelector: '.stream-items li.stream-item'
+
+$(document).ready(dream)
+$(document).on('page:load', dream)

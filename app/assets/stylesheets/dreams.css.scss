@@ -10,6 +10,7 @@ $placeholderColor: #CCD6DD;
 $lineColor: #E5E5E5;
 $actionButtonColor: #7F7F7F;
 $richEditorBorderColor: #DCDEE3;
+$modal-width: 400px;
 
 @mixin card_decoration {
   border: 1px solid;
@@ -41,7 +42,7 @@ $richEditorBorderColor: #DCDEE3;
       height: 120px;
       padding: 0 1px;
       background-color: $mainColor;
-      background-image: url("kyoka.png");
+      //background-image: url("kyoka.png");
       background-size: 100%;
       background-position: 0 50%;
       border-radius: 3px 3px 0 0;
@@ -450,7 +451,7 @@ $richEditorBorderColor: #DCDEE3;
             float: left;
             padding-right: 8px;
             display: inline;
-            text-align: ingerit;
+            text-align: inherit;
             .Footer-link {
               color: $textLightColor;
             }
@@ -459,4 +460,24 @@ $richEditorBorderColor: #DCDEE3;
       }
     }
   }
+}
+
+#dream_content {
+  resize: none;
+  height: 120px;
+  max-height: 300px;
+}
+
+#new_dream {
+  padding-top: 5px;
+}
+
+.modal-dream-btn {
+  border-color: #E67E22;
+  background-color: #FFF;
+  color: #E67E22;
+}
+
+.modal-dream-btn {
+  margin-left: 15px;
 }

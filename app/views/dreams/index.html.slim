@@ -8,12 +8,12 @@
             = image_tag 'avatar.jpeg', size: '', alt: 'プロフィール画像', class: 'DashboardProfileCard-avatarImage'
         .DashboardProfileCard-userFields
           .DashboardProfileCard-name.u-textTruncate
-            = link_to '髙橋宗也', 'users/:id/show', class: 'u-textInheritColor'
+            = link_to current_user.nickname, 'users/:id/show', class: 'u-textInheritColor'
           span.DashboardProfileCard-screenname.u-inlineBlock
             = link_to 'users/:id/show', class: 'DashboardProfileCard-screennameLink u-linkComplex u-linkClean' do
               | @
               span.u-linkComplex-target
-                | appleeeen0525
+                = current_user.user_name
         .ProfileCardStats
           ul.ProfileCardStats-statList.Arrange.Arrange--bottom.Arrange--equal
             li.ProfileCardStats-stat.Arrange-sizeFit
@@ -21,7 +21,7 @@
                 span.ProfileCardStats-statLabel.u-block
                   | ドリーム
                 span.ProfileCardStats-statValue
-                  | 233
+                  = current_user.dreams.count
             li.ProfileCardStats-stat.Arrange-sizeFit
               = link_to 'users/:id/show', class: 'ProfileCardStats-statLink u-textUserColor u-linkClean u-block' do
                 span.ProfileCardStats-statLabel.u-block
@@ -37,299 +37,14 @@
     .CalenderCard.module
       | Calendar
   .content-main.top-timeline-dreambox#timeline.clearfix
-    .timeline-dream-box
-      .home-dream-box.dream-box.component.dream-user
-        = image_tag 'avatar.jpeg', size: '', alt: 'プロフィール画像', class: 'top-timeline-tweet-box-user-image'
-        form.dream-form.is-minimalButtonLabels
-          .dream-content
-            .RichEditor
-              .RichEditor-scrollContainer
-                .dream-box#dream-box-home-timeline contenteditable='true' placeholder='どんな夢を見たの？' spellcheck='true' role='textbox' aria-multiline='true'
-          .DreamBoxToolbar
-            .DreamBoxExtras-item.DreamBox-mediaPicker
-            .DreamBoxToolbar-dreamButton.dream-button
-              select.selectpicker
-                option value="1" 公開
-                option value="2" 自分のみ
-              button.btn.btn-default.primary-btn.dream-action.dream-btn type='button' ドリーム
+    = render 'dream_form'
     .stream-container
       .stream
         ol.stream-items#stream-items-id
-          li.stream-item.expanding-stream-item
-            .context
-              .dream-context
-                span.dream-date
-                  | 2016年2月1日
-            .dream.original-dream
-              .content
-                .stream-item-header.clearfix
-                  .stream-item-header-right
-                    = link_to 'users/:id/show', class: 'userFields' do
-                      = image_tag 'avatar.jpeg', size: '', alt: 'avatar', class: 'avatar'
-                      strong.fullname
-                        | 髙橋宗也
-                      span.username
-                        b
-                          |  @appleeeen0525
-                    .posted-time
-                      small.time
-                        = link_to 'dreams/:id/show', class: 'dream-timestamp' do
-                          span._timestamp
-                            | 2016年2月1日 23:59
-                  .ProfileDream-action--more
-                    .dropdown
-                      = link_to '#', class: 'ProfileDream-actionButton u-textUserColorHover dropdown-toggle', data: { toggle: 'dropdown' } do
-                        = image_tag 'arrow.png', size: '', alt: 'more'
-                      .dropdown-menu
-                        ul
-                          li
-                            = link_to 'hoge', '#'
-                          li
-                            = link_to 'fuga', '#'
-                          li
-                            = link_to 'hoge', '#'
-                .js-dream-text-container
-                  p.DreamTextSize.dream-text
-                    | 財布無くしたー(o_o)
-                    br
-                    | って大騒ぎした結果椅子の上に置いてあった
-                    br
-                    br
-                    | ままある
-                .stream-item-footer
-                  .ProfileDream-actionList
-                    .ProfileDream-action.ProfileDream-action--favorite
-                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
-                        = image_tag 'favorite.png', size: '20x20', alt: 'favorite', class: 'favorite action-image'
-                        | お気に入り
-                    .ProfileDream-action.ProfileDream-action--comment
-                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
-                        = image_tag 'comment.png', size: '20x20', alt: 'comment', class: 'comment action-image'
-                        | コメントする
-                    .ProfileDream-action.ProfileDream-action--share
-                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
-                        = image_tag 'share.png', size: '20x20', alt: 'share', class: 'share action-image'
-                        | シェアする
-          li.stream-item.expanding-stream-item
-            .context
-              .dream-context
-                span.dream-date
-                  | 2016年2月1日
-            .dream.original-dream
-              .content
-                .stream-item-header.clearfix
-                  .stream-item-header-right
-                    = link_to 'users/:id/show', class: 'userFields' do
-                      = image_tag 'avatar.jpeg', size: '', alt: 'avatar', class: 'avatar'
-                      strong.fullname
-                        | 髙橋宗也
-                      span.username
-                        b
-                          |  @appleeeen0525
-                    .posted-time
-                      small.time
-                        = link_to 'dreams/:id/show', class: 'dream-timestamp' do
-                          span._timestamp
-                            | 2016年2月1日 23:59
-                  .ProfileDream-action--more
-                    .dropdown
-                      = link_to '#', class: 'ProfileDream-actionButton u-textUserColorHover dropdown-toggle', data: { toggle: 'dropdown' } do
-                        = image_tag 'arrow.png', size: '', alt: 'more'
-                      .dropdown-menu
-                        ul
-                          li
-                            = link_to 'hoge', '#'
-                          li
-                            = link_to 'fuga', '#'
-                          li
-                            = link_to 'hoge', '#'
-                .js-dream-text-container
-                  p.DreamTextSize.dream-text
-                    | 財布無くしたー(o_o)
-                    br
-                    | って大騒ぎした結果椅子の上に置いてあった
-                    br
-                    br
-                    | ままある
-                .stream-item-footer
-                  .ProfileDream-actionList
-                    .ProfileDream-action.ProfileDream-action--favorite
-                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
-                        = image_tag 'favorite.png', size: '20x20', alt: 'favorite', class: 'favorite action-image'
-                        | お気に入り
-                    .ProfileDream-action.ProfileDream-action--comment
-                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
-                        = image_tag 'comment.png', size: '20x20', alt: 'comment', class: 'comment action-image'
-                        | コメントする
-                    .ProfileDream-action.ProfileDream-action--share
-                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
-                        = image_tag 'share.png', size: '20x20', alt: 'share', class: 'share action-image'
-                        | シェアする
-          li.stream-item.expanding-stream-item
-            .context
-              .dream-context
-                span.dream-date
-                  | 2016年2月1日
-            .dream.original-dream
-              .content
-                .stream-item-header.clearfix
-                  .stream-item-header-right
-                    = link_to 'users/:id/show', class: 'userFields' do
-                      = image_tag 'avatar.jpeg', size: '', alt: 'avatar', class: 'avatar'
-                      strong.fullname
-                        | 髙橋宗也
-                      span.username
-                        b
-                          |  @appleeeen0525
-                    .posted-time
-                      small.time
-                        = link_to 'dreams/:id/show', class: 'dream-timestamp' do
-                          span._timestamp
-                            | 2016年2月1日 23:59
-                  .ProfileDream-action--more
-                    .dropdown
-                      = link_to '#', class: 'ProfileDream-actionButton u-textUserColorHover dropdown-toggle', data: { toggle: 'dropdown' } do
-                        = image_tag 'arrow.png', size: '', alt: 'more'
-                      .dropdown-menu
-                        ul
-                          li
-                            = link_to 'hoge', '#'
-                          li
-                            = link_to 'fuga', '#'
-                          li
-                            = link_to 'hoge', '#'
-                .js-dream-text-container
-                  p.DreamTextSize.dream-text
-                    | 財布無くしたー(o_o)
-                    br
-                    | って大騒ぎした結果椅子の上に置いてあった
-                    br
-                    br
-                    | ままある
-                .stream-item-footer
-                  .ProfileDream-actionList
-                    .ProfileDream-action.ProfileDream-action--favorite
-                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
-                        = image_tag 'favorite.png', size: '20x20', alt: 'favorite', class: 'favorite action-image'
-                        | お気に入り
-                    .ProfileDream-action.ProfileDream-action--comment
-                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
-                        = image_tag 'comment.png', size: '20x20', alt: 'comment', class: 'comment action-image'
-                        | コメントする
-                    .ProfileDream-action.ProfileDream-action--share
-                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
-                        = image_tag 'share.png', size: '20x20', alt: 'share', class: 'share action-image'
-                        | シェアする
-          li.stream-item.expanding-stream-item
-            .context
-              .dream-context
-                span.dream-date
-                  | 2016年2月1日
-            .dream.original-dream
-              .content
-                .stream-item-header.clearfix
-                  .stream-item-header-right
-                    = link_to 'users/:id/show', class: 'userFields' do
-                      = image_tag 'avatar.jpeg', size: '', alt: 'avatar', class: 'avatar'
-                      strong.fullname
-                        | 髙橋宗也
-                      span.username
-                        b
-                          |  @appleeeen0525
-                    .posted-time
-                      small.time
-                        = link_to 'dreams/:id/show', class: 'dream-timestamp' do
-                          span._timestamp
-                            | 2016年2月1日 23:59
-                  .ProfileDream-action--more
-                    .dropdown
-                      = link_to '#', class: 'ProfileDream-actionButton u-textUserColorHover dropdown-toggle', data: { toggle: 'dropdown' } do
-                        = image_tag 'arrow.png', size: '', alt: 'more'
-                      .dropdown-menu
-                        ul
-                          li
-                            = link_to 'hoge', '#'
-                          li
-                            = link_to 'fuga', '#'
-                          li
-                            = link_to 'hoge', '#'
-                .js-dream-text-container
-                  p.DreamTextSize.dream-text
-                    | 財布無くしたー(o_o)
-                    br
-                    | って大騒ぎした結果椅子の上に置いてあった
-                    br
-                    br
-                    | ままある
-                .stream-item-footer
-                  .ProfileDream-actionList
-                    .ProfileDream-action.ProfileDream-action--favorite
-                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
-                        = image_tag 'favorite.png', size: '20x20', alt: 'favorite', class: 'favorite action-image'
-                        | お気に入り
-                    .ProfileDream-action.ProfileDream-action--comment
-                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
-                        = image_tag 'comment.png', size: '20x20', alt: 'comment', class: 'comment action-image'
-                        | コメントする
-                    .ProfileDream-action.ProfileDream-action--share
-                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
-                        = image_tag 'share.png', size: '20x20', alt: 'share', class: 'share action-image'
-                        | シェアする
-          li.stream-item.expanding-stream-item
-            .context
-              .dream-context
-                span.dream-date
-                  | 2016年2月1日
-            .dream.original-dream
-              .content
-                .stream-item-header.clearfix
-                  .stream-item-header-right
-                    = link_to 'users/:id/show', class: 'userFields' do
-                      = image_tag 'avatar.jpeg', size: '', alt: 'avatar', class: 'avatar'
-                      strong.fullname
-                        | 髙橋宗也
-                      span.username
-                        b
-                          |  @appleeeen0525
-                    .posted-time
-                      small.time
-                        = link_to 'dreams/:id/show', class: 'dream-timestamp' do
-                          span._timestamp
-                            | 2016年2月1日 23:59
-                  .ProfileDream-action--more
-                    .dropdown
-                      = link_to '#', class: 'ProfileDream-actionButton u-textUserColorHover dropdown-toggle', data: { toggle: 'dropdown' } do
-                        = image_tag 'arrow.png', size: '', alt: 'more'
-                      .dropdown-menu
-                        ul
-                          li
-                            = link_to 'hoge', '#'
-                          li
-                            = link_to 'fuga', '#'
-                          li
-                            = link_to 'hoge', '#'
-                .js-dream-text-container
-                  p.DreamTextSize.dream-text
-                    | 財布無くしたー(o_o)
-                    br
-                    | って大騒ぎした結果椅子の上に置いてあった
-                    br
-                    br
-                    | ままある
-                .stream-item-footer
-                  .ProfileDream-actionList
-                    .ProfileDream-action.ProfileDream-action--favorite
-                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
-                        = image_tag 'favorite.png', size: '20x20', alt: 'favorite', class: 'favorite action-image'
-                        | お気に入り
-                    .ProfileDream-action.ProfileDream-action--comment
-                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
-                        = image_tag 'comment.png', size: '20x20', alt: 'comment', class: 'comment action-image'
-                        | コメントする
-                    .ProfileDream-action.ProfileDream-action--share
-                      = link_to '', class: 'ProfileDream-actionButton u-textUserColorHover' do
-                        = image_tag 'share.png', size: '20x20', alt: 'share', class: 'share action-image'
-                        | シェアする
+          - if @dreams.present?
+            .page
+              = render @dreams
+    = paginate @dreams
   .dashboard.dashboard-right.clearfix
     .module.roaming-module.wtf-module.has-content
       .flex-module
@@ -398,3 +113,5 @@
               = link_to 'プライバシー', '#', class: 'Footer-link'
             li.Footer-item
               = link_to '開発者', '#', class: 'Footer-link'
+
+= render 'modal_dream_form'

@@ -4,9 +4,9 @@ dream = ->
     $('#content-param').val(value)
   )
 
-  $('#dream_content').autosize()
+  $('.modal-form').autosize()
 
-  $('#dream_content').keyup ->
+  $('.modal-form').keyup ->
     if !$(this).val()
       $('.btn-warning').prop('disabled', true)
     else
